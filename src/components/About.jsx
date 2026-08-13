@@ -1,5 +1,5 @@
 import React from 'react';
-import { Cpu, Code, Lightbulb, BookOpen, UserCheck, GraduationCap, Award, IdCard, Mail } from 'lucide-react';
+import { Cpu, Code, Lightbulb, BookOpen } from 'lucide-react';
 import SectionHeading from './common/SectionHeading';
 
 const FOCUS_AREAS = [
@@ -33,33 +33,6 @@ const FOCUS_AREAS = [
   }
 ];
 
-const CLUB_HEADS = [
-  {
-    name: 'Avi Beladiya',
-    role: 'Club Head',
-    idNo: '25DCE007',
-    email: '25dce007@charusat.edu.in',
-    department: 'Computer Engineering',
-    institute: 'DEPSTAR',
-    initials: 'AB',
-    accent: '#00f0ff',
-    border: 'rgba(0, 240, 255, 0.3)',
-    bgGradient: 'linear-gradient(135deg, rgba(0, 240, 255, 0.15) 0%, rgba(59, 130, 246, 0.1) 100%)'
-  },
-  {
-    name: 'Femi Dungrani',
-    role: 'Club Head',
-    idNo: '25DCE024',
-    email: '25dce024@charusat.edu.in',
-    department: 'Computer Engineering',
-    institute: 'DEPSTAR',
-    initials: 'FD',
-    accent: '#c084fc',
-    border: 'rgba(192, 132, 252, 0.3)',
-    bgGradient: 'linear-gradient(135deg, rgba(192, 132, 252, 0.15) 0%, rgba(236, 72, 153, 0.1) 100%)'
-  }
-];
-
 export default function About() {
   return (
     <section
@@ -79,7 +52,7 @@ export default function About() {
           align="center"
         />
 
-        {/* Primary Purpose Card (Strict Prompt Text) */}
+        {/* Primary Purpose Card */}
         <div style={{ maxWidth: '820px', margin: '0 auto 4rem auto' }}>
           <div
             className="glass-card"
@@ -108,7 +81,7 @@ export default function About() {
         </div>
 
         {/* What We Focus On Section */}
-        <div style={{ marginTop: '2rem', marginBottom: '4.5rem' }}>
+        <div style={{ marginTop: '2rem' }}>
           <div style={{ textAlign: 'center', marginBottom: '2.5rem' }}>
             <h3
               style={{
@@ -194,193 +167,6 @@ export default function About() {
                 </div>
               );
             })}
-          </div>
-        </div>
-
-        {/* Club Leadership / Club Heads */}
-        <div style={{ marginTop: '2rem' }}>
-          <div style={{ textAlign: 'center', marginBottom: '2.5rem' }}>
-            <div style={{ display: 'inline-flex', marginBottom: '0.75rem' }}>
-              <span className="badge badge-purple">
-                <UserCheck size={13} />
-                Club Leadership
-              </span>
-            </div>
-            <h3
-              style={{
-                fontSize: '1.8rem',
-                fontWeight: 800,
-                color: '#ffffff',
-                marginBottom: '0.5rem'
-              }}
-            >
-              Club <span className="gradient-text-cyan">Heads</span>
-            </h3>
-            <p style={{ fontSize: '0.95rem', color: '#94a3b8', maxWidth: '520px', margin: '0 auto' }}>
-              Leading TECHNOVA's student initiatives, events, and technical community.
-            </p>
-          </div>
-
-          <div
-            style={{
-              display: 'grid',
-              gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))',
-              gap: '1.75rem',
-              maxWidth: '820px',
-              margin: '0 auto'
-            }}
-          >
-            {CLUB_HEADS.map((head, idx) => (
-              <div
-                key={idx}
-                className="glass-card"
-                style={{
-                  padding: '2rem',
-                  display: 'flex',
-                  flexDirection: 'column',
-                  gap: '1.25rem',
-                  border: `1px solid ${head.border}`,
-                  background: 'rgba(10, 15, 34, 0.8)',
-                  position: 'relative',
-                  overflow: 'hidden'
-                }}
-              >
-                {/* Subtle corner aura */}
-                <div
-                  style={{
-                    position: 'absolute',
-                    top: '-20px',
-                    right: '-20px',
-                    width: '100px',
-                    height: '100px',
-                    borderRadius: '50%',
-                    background: head.bgGradient,
-                    filter: 'blur(30px)',
-                    pointerEvents: 'none'
-                  }}
-                />
-
-                <div style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
-                  {/* Glowing Initials Avatar */}
-                  <div
-                    style={{
-                      width: '56px',
-                      height: '56px',
-                      borderRadius: '16px',
-                      background: head.bgGradient,
-                      border: `1px solid ${head.border}`,
-                      display: 'flex',
-                      alignItems: 'center',
-                      justifyContent: 'center',
-                      fontFamily: 'var(--font-heading)',
-                      fontWeight: 800,
-                      fontSize: '1.25rem',
-                      color: head.accent,
-                      boxShadow: `0 0 20px ${head.border}`
-                    }}
-                  >
-                    {head.initials}
-                  </div>
-
-                  <div>
-                    <h4
-                      style={{
-                        fontSize: '1.3rem',
-                        fontWeight: 800,
-                        color: '#ffffff',
-                        marginBottom: '0.2rem'
-                      }}
-                    >
-                      {head.name}
-                    </h4>
-                    <span
-                      style={{
-                        fontSize: '0.84rem',
-                        fontWeight: 600,
-                        color: head.accent,
-                        letterSpacing: '0.04em',
-                        textTransform: 'uppercase'
-                      }}
-                    >
-                      {head.role}
-                    </span>
-                  </div>
-                </div>
-
-                {/* ID and Academic Details */}
-                <div
-                  style={{
-                    padding: '1rem',
-                    borderRadius: '12px',
-                    backgroundColor: 'rgba(5, 8, 20, 0.65)',
-                    border: '1px solid rgba(255, 255, 255, 0.05)',
-                    display: 'flex',
-                    flexDirection: 'column',
-                    gap: '0.65rem'
-                  }}
-                >
-                  <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
-                    <span style={{ fontSize: '0.82rem', color: '#94a3b8', display: 'flex', alignItems: 'center', gap: '6px' }}>
-                      <IdCard size={14} color="#00f0ff" />
-                      Student ID
-                    </span>
-                    <span
-                      style={{
-                        fontFamily: 'var(--font-mono)',
-                        fontSize: '0.85rem',
-                        fontWeight: 600,
-                        color: '#ffffff',
-                        padding: '2px 8px',
-                        borderRadius: '6px',
-                        background: 'rgba(0, 240, 255, 0.1)',
-                        border: '1px solid rgba(0, 240, 255, 0.2)'
-                      }}
-                    >
-                      {head.idNo}
-                    </span>
-                  </div>
-
-                  <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
-                    <span style={{ fontSize: '0.82rem', color: '#94a3b8', display: 'flex', alignItems: 'center', gap: '6px' }}>
-                      <Mail size={14} color="#00f0ff" />
-                      Official Email
-                    </span>
-                    <a
-                      href={`mailto:${head.email}`}
-                      style={{
-                        fontSize: '0.82rem',
-                        fontWeight: 500,
-                        color: '#00f0ff',
-                        fontFamily: 'var(--font-mono)',
-                        textDecoration: 'none'
-                      }}
-                    >
-                      {head.email}
-                    </a>
-                  </div>
-
-                  <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
-                    <span style={{ fontSize: '0.82rem', color: '#94a3b8', display: 'flex', alignItems: 'center', gap: '6px' }}>
-                      <GraduationCap size={14} color="#c084fc" />
-                      Department
-                    </span>
-                    <span style={{ fontSize: '0.85rem', fontWeight: 600, color: '#e2e8f0', textAlign: 'right' }}>
-                      {head.department}
-                    </span>
-                  </div>
-
-                  <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
-                    <span style={{ fontSize: '0.82rem', color: '#94a3b8', display: 'flex', alignItems: 'center', gap: '6px' }}>
-                      <Award size={14} color="#34d399" />
-                      Institute
-                    </span>
-                    <span style={{ fontSize: '0.85rem', fontWeight: 700, color: '#00f0ff' }}>
-                      {head.institute}
-                    </span>
-                  </div>
-                </div>
-              </div>
-            ))}
           </div>
         </div>
       </div>
